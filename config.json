@@ -1,0 +1,44 @@
+{
+    "ID": "theoremdep",
+    "NAME": "TheoremDep",
+    "DESCRIPTION": "Track dependencies between theorems.",
+    "SITEURL": "https://sharmaeklavya2.github.io/theoremdep",
+
+    "REPO": "https://github.com/sharmaeklavya2/theoremdep-source",
+    "LONG_DESCRIPTION": "TheoremDep contains many theorems and shows you the dependencies for each theorem. Theorem X is said to be dependent on theorem Y iff Y is used as a lemma in the proof of X. Therefore, this website presents proofs in a way which simultaneously achieves the goals of not assuming any prior knowledge and making it easy to skip parts you already know.",
+    "SIMILAR_PROJECTS": {
+        "Metacademy": "https://metacademy.org/about",
+        "ProofWiki": "https://proofwiki.org/wiki/Main_Page",
+        "Metamath": "http://us.metamath.org/index.html"
+    },
+    "DEFAULT_LANG": "en",
+
+    "ASYNC_JS": [
+        "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    ],
+    "DEP_REASON_MAP": {
+        "def": "Used in definition",
+        "proof": "Used in proof"
+    },
+    "SEARCH_FIELDS": ["title", "description", "keywords"],
+    "SEARCH_SYNC_JS": [
+        "https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.js"
+    ],
+
+    "DISABLE": ["dot"],
+
+    "METADATA_VALIDATION": {
+        "type": {
+            "required": true,
+            "type": "string",
+            "in": ["theorem", "def", "theoremdef"]
+        },
+        "title": {
+            "required": true,
+            "type": "string"
+        },
+        "keywords": {
+            "type": "list"
+        }
+    }
+}
